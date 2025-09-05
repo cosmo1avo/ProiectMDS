@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - BioAnalytica</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-body">
+
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h2>🌱 BioAnalytica</h2>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-item active" data-section="overview">
+                <span class="nav-icon">📊</span>
+                Prezentare Generală
+            </a>
+            <a href="#" class="nav-item" data-section="samples">
+                <span class="nav-icon">🧪</span>
+                Probe Biomasă
+            </a>
+            <a href="#" class="nav-item" data-section="experiments">
+                <span class="nav-icon">⚗️</span>
+                Experimente
+            </a>
+            <a href="#" class="nav-item" data-section="energy">
+                <span class="nav-icon">⚡</span>
+                Calculuri Energie
+            </a>
+            <a href="#" class="nav-item" data-section="reports">
+                <span class="nav-icon">📈</span>
+                Rapoarte
+            </a>
+            <a href="#" class="nav-item" data-section="researchers">
+    <span class="nav-icon">👥</span>
+    Cercetătorii Noștri
+</a>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="user-info" id="userInfo">
+                <span id="userName"></span>
+                <button class="btn btn-sm" id="logoutBtn">Deconectare</button>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="dashboard-header">
+            <h1 id="sectionTitle">Prezentare Generală</h1>
+            <div class="header-actions">
+                <button class="btn btn-primary" id="addSampleBtn">
+                    <span>+</span> Adaugă Probă
+                </button>
+            </div>
+        </header>
+
+        <section id="overviewSection" class="content-section active">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Total Probe</h3>
+                    <p class="stat-number" id="totalsamples">0</p>
+                    <span class="stat-label">probe înregistrate</span>
+                </div>
+                <div class="stat-card">
+                    <h3>Experimente Active</h3>
+                    <p class="stat-number">0</p>
+                    <span class="stat-label">în desfășurare</span>
+                </div>
+                <div class="stat-card">
+                    <h3>Eficiență Medie</h3>
+                    <p class="stat-number">78.5%</p>
+                    <span class="stat-label">energie produsă</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="samplesSection" class="content-section">
+            <div class="samples-controls">
+                <div class="search-box">
+                    <input type="text" placeholder="Caută probe..." id="searchsamples">
+                </div>
+                <select id="filterType" class="filter-select">
+                    <option value="">Toate tipurile</option>
+                    <option value="lemn">Lemn</option>
+                    <option value="paie">Paie</option>
+                    <option value="alge">Alge</option>
+                    <option value="resturi">Resturi agricole</option>
+                </select>
+            </div>
+            <div class="samples-grid" id="samplesGrid">
+            </div>
+        </section>
+
+        <section id="experimentsSection" class="content-section">
+            <h2>Experimente - În dezvoltare</h2>
+            <p>Această secțiune va fi implementată în următoarea versiune.</p>
+        </section>
+
+        <section id="energySection" class="content-section">
+            <h2>Calculuri Energie - În dezvoltare</h2>
+            <p>Această secțiune va fi implementată în următoarea versiune.</p>
+        </section>
+
+        <section id="reportsSection" class="content-section">
+            <h2>Rapoarte - În dezvoltare</h2>
+            <p>Această secțiune va fi implementată în următoarea versiune.</p>
+        </section>
+        <section id="researchersSection" class="content-section">
+    <div class="researchers-header">
+        <div class="researchers-stats">
+            <div class="stat-mini">
+                <span class="stat-number" id="totalResearchers">0</span>
+                <span class="stat-label">Cercetători activi</span>
+            </div>
+            <div class="stat-mini">
+                <span class="stat-number" id="totalScientists">0</span>
+                <span class="stat-label">Scientiști</span>
+            </div>
+            <div class="stat-mini">
+                <span class="stat-number" id="newestMember">Nou</span>
+                <span class="stat-label">Cel mai recent</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="researchers-intro">
+        <h2>🌟 Echipa Noastră de Cercetători</h2>
+        <p>Descoperă cercetătorii pasionați care contribuie la dezvoltarea tehnologiilor verzi și a energiei din biomasă pe platforma BioAnalytica.</p>
+    </div>
+     <div class="researchers-filters">
+        <div class="filter-tabs">
+            <button class="filter-tab active" data-role="all">Toți</button>
+            <button class="filter-tab" data-role="researcher">Cercetători</button>
+            <button class="filter-tab" data-role="scientist">Scientiști</button>
+            <button class="filter-tab" data-role="admin">Administratori</button>
+        </div>
+        <div class="search-researchers">
+            <input type="text" placeholder="Caută cercetători..." id="searchResearchers">
+            <span class="search-icon">🔍</span>
+        </div>
+    </div>
+
+    <div class="researchers-grid" id="researchersGrid">
+        <div class="loading-researchers">
+            <div class="loading-spinner"></div>
+            <p>Se încarcă cercetătorii...</p>
+        </div>
+    </div>
+</section>
+
+    </main>
+
+    <div id="addSampleModal" class="modal">
+        <div class="modal-content modal-large">
+            <span class="close" id="closeSampleModal">&times;</span>
+            <h2>Adaugă Probă Nouă de Biomasă</h2>
+            
+            <form id="addSampleForm">
+    <div class="form-group">
+        <label for="sampleName">Nume Proba</label>
+        <input type="text" id="sampleName" name="sample_name" required>
+    </div>
+    <div class="form-group">
+        <label for="sampleType">Tip Biomasă</label>
+        <input type="text" id="sampleType" name="sample_type">
+    </div>
+    <div class="form-group">
+        <label for="quantity">Cantitate (g)</label>
+        <input type="number" id="quantity" name="quantity">
+    </div>
+    <div class="form-group">
+        <label for="description">Descriere</label>
+        <textarea id="description" name="description"></textarea>
+    </div>
+    <div class="form-actions">
+        <button type="button" class="btn btn-outline" id="cancelSample">Anulează</button>
+        <button type="submit" class="btn btn-primary">Adaugă Proba</button>
+    </div>
+</form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioAnalytica - Sistemul de gestionare energie din biomasă</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>🌱 BioAnalytica</h1>
+                <span>Energie din Biomasă</span>
+            </div>
+            <nav class="nav" id="mainNav">
+                <button class="btn btn-outline" id="loginBtn">Autentificare</button>
+                <button class="btn btn-primary" id="registerBtn">Înregistrare</button>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Analizează și Optimizează Energia din Biomasă</h1>
+                <p>Platforma avansată pentru cercetătorii în domeniul energiei regenerabile. Gestionează probe, experimente și calculează eficiența energetică cu ajutorul AI.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary btn-large" id="getStartedBtn">Începe Cercetarea</button>
+                    <button class="btn btn-outline btn-large" id="learnMoreBtn">Află Mai Mult</button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="energy-card">
+                    <h3>Eficiență Energetică</h3>
+                    <div class="energy-meter">
+                        <div class="meter-fill"></div>
+                    </div>
+                    <span>85.2% eficiență</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2>Funcționalități Avansate</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🧪</div>
+                    <h3>Gestionare Probe</h3>
+                    <p>Adaugă și organizează probe de biomasă cu detalii complete și sistem de categorii.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Analiză cu AI</h3>
+                    <p>Calculează puterea calorică și eficiența energetică folosind algoritmi avansați.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Experimente Live</h3>
+                    <p>Monitorizează în timp real parametrii experimentelor tale de cercetare.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Raportare Avansată</h3>
+                    <p>Generează rapoarte automate și compară performanțele între perioade.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            
+            <div id="loginForm" class="auth-form active">
+                <h2>Autentificare</h2>
+                <form id="loginFormElement">
+                    <div class="form-group">
+                        <label for="loginEmail">Email</label>
+                        <input type="email" id="loginEmail" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Parolă</label>
+                        <input type="password" id="loginPassword" name="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Intră în Cont</button>
+                    <p class="switch-form">
+                        Nu ai cont? <a href="#" id="switchToRegister">Înregistrează-te</a>
+                    </p>
+                </form>
+            </div>
+
+            <div id="registerForm" class="auth-form">
+                <h2>Înregistrare</h2>
+                <form id="registerFormElement">
+                    <div class="form-group">
+                        <label for="registerUsername">Nume utilizator</label>
+                        <input type="text" id="registerUsername" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerEmail">Email</label>
+                        <input type="email" id="registerEmail" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPassword">Parolă</label>
+                        <input type="password" id="registerPassword" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerRole">Rol</label>
+                        <select id="registerRole" name="role">
+                            <option value="researcher">Cercetător</option>
+                            <option value="scientist">Scientist</option>
+                            <option value="admin">Administrator</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Creează Cont</button>
+                    <p class="switch-form">
+                        Ai deja cont? <a href="#" id="switchToLogin">Autentifică-te</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 BioAnalytica. Toate drepturile rezervate.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
